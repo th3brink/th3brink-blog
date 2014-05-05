@@ -22,7 +22,6 @@
 
 
 var app = angular.module('th3brink', requires)
-
     .config(function($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
 
@@ -48,12 +47,27 @@ var app = angular.module('th3brink', requires)
 
 
         }).otherwise({redirectTo: '/'});
-  })
+    })
 
 
-  .controller('PortfolioCtrl', function ($scope, $rootScope) {
+    .controller('PortfolioCtrl', function ($scope, $rootScope, User) {
         $rootScope.navLocation = 'portfolio';
-  })
+        $scope.portfolio = [];
+
+        var onLoad = function () {
+            var promise = $kinvey.DataStore.find('Portfolio');
+            promise.then(function(portfolio){
+                $scope.portfolio = portfolio;
+            });
+
+            $scope.spinnerShowing = false;
+
+        };
+
+        if (User.loaded) onLoad();
+        User.addObserver(onLoad);
+
+    })
 
     .controller('GamerCtrl', function ($scope, $rootScope) {
         $rootScope.navLocation = 'gamer';
