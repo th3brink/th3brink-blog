@@ -50,7 +50,7 @@ var app = angular.module('th3brink', requires)
     })
 
 
-    .controller('PortfolioCtrl', function ($scope, $rootScope, User) {
+    .controller('PortfolioCtrl', function ($scope, $rootScope, $kinvey, User) {
         $rootScope.navLocation = 'portfolio';
         $scope.portfolio = [];
 
