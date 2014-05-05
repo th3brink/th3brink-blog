@@ -3,7 +3,7 @@ div.row()
   div.row
     div.outer-center(ng-show="spinnerShowing")
       img.inner-center(src="img/blue-black-spinner.gif")
-    div.col-9.well(ng-repeat="post in posts | filter: search", style="margin-bottom: 10px")
+    div.col-12.well(ng-repeat="post in posts | filter: search", style="margin-bottom: 10px")
       div.col-sm-12
         h4.pull-right {{post.datetime | date: 'mediumDate'}}
         a(href="post/{{post._id}}")
@@ -12,7 +12,7 @@ div.row()
       div.col-sm-12
         p.meta-blog.clearfix
           i.glyphicon.glyphicon-comment.buffer-right
-          a() {{post.comments.length}} Comments
+          a(href="post/{{post._id}}") {{post.comments.length}} Comments
           span.buffer |
           i.glyphicon.glyphicon-share.buffer-right
           a() {{post.shares.length}} shares
@@ -28,21 +28,28 @@ div.row()
 
       div.col-sm-4
         img.img-rounded.img-responsive(ng-src="{{post.pic._downloadURL}}", alt="post pic", width="100%")
-      div.caption.col-sm-5
+      div.caption.col-sm-8.blog-post
         btf-markdown(ng-model="post.body")
-      p
-        a.btn.btn-info(ng-show="user.username == post.username", href="editPost/{{post._id}}", style="position: absolute; bottom: 10px; right: 145px;") Edit
-        a.btn.btn-primary(href="post/{{post._id}}", style="position: absolute; bottom: 10px; right: 25px;") Read More...
+      p.row
+        a(ng-show="user.username == post.username", href="editPost/{{post._id}}", style="position: absolute; bottom: 10px; right: 145px;") Edit
+        a(href="post/{{post._id}}", style="position: absolute; bottom: 10px; right: 25px;") Read More...
+div
+  div.side-bar(ng-class="{false:'right-side-bar-closed', true: 'right-side-bar-open'}[showSideBar]")
+    div.well.inner-bar
+      div.bar-tab.bar-right(ng-click="showSideBar = !showSideBar")
+        div.bar-tab-icon-right
+          span.glyphicon(ng-class="{true:'glyphicon-chevron-right', false:'glyphicon-chevron-left'}[showSideBar]")
+      div.row
+        h2(style=) Search
+        input(type="text", ng-model="search.body")
+        hr
+      div.row
+        h2
+          span Tags
+          //i.glyphicon.glyphicon-tags
 
-  div.col-3.well( style="position: fixed; top: 70px; right: -4px; margin-bottom: 10px")
-    h2 Search
-    input(type="text", ng-model="search.body")
-    hr
-    h2
-      i.pull-right.glyphicon.glyphicon-tags
-      span Tags
 
-    div(ng-repeat="tag in tags", style="margin: 2px; width: 90%;")
-      a.label.label-info(ng-class="{true:'selected-tag', false:''}[tagSelected(tag.name)]",
-      style="color: {{tag.textColor}}; background-color: {{tag.color}};",
-      ng-click="addTagSearch(tag.name, $index)") {{tag.name}}
+        div(ng-repeat="tag in tags", style="margin: 2px; width: 90%;")
+          a.label.label-info(ng-class="{true:'selected-tag', false:''}[tagSelected(tag.name)]",
+          style="color: {{tag.textColor}}; background-color: {{tag.color}};",
+          ng-click="addTagSearch(tag.name, $index)") {{tag.name}}

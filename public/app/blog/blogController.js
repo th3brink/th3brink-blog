@@ -195,7 +195,7 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
 
 app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $location) {
     $rootScope.navLocation = 'blog';
-
+    $scope.showSideBar = true;
     $scope.search = {
         body: '',
         tags: []
@@ -268,7 +268,8 @@ app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $locatio
 app.controller('PostCtrl', function ($scope, $rootScope, $routeParams, $kinvey, User) {
     $rootScope.navLocation = 'blog';
     $scope.selectedPost = {
-        body: ''
+        body: '',
+        pic: ''
     };
 
     var loadPost = function () {

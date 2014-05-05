@@ -37,5 +37,5 @@ div.well
     input.btn.btn-primary.pull-right(type="submit", value="Post")
     input#postPic(type="file")
     br
-    img(ng-show="post.pic", ng-src="{{post.pic._downloadURL}}")
+    img.limit-image-size(ng-show="post.pic", ng-src="{{post.pic._downloadURL}}")
 

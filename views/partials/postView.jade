@@ -1,8 +1,10 @@
 // Copyright (c) 8/20/13 Green Seed Technologies, Inc. All rights reserved.
 // Author: James Brinkerhoff <james.brinkerhoff@greenseedtechnologies.com>
 
+div.col-12(ng-hide="selectedPost.body")
+  include /partials/includes/loadWell
 
-div.col-12.well
+div.col-12.well(ng-show="selectedPost.body")
   div.col-sm-12
     h4.pull-right {{selectedPost.datetime | date: 'mediumDate'}}
     h2 {{selectedPost.title}}
@@ -25,8 +27,8 @@ div.col-12.well
           span {{tag.name}}
 
   div.col-sm-4
-    img.img-rounded.img-responsive(ng-src="{{selectedPost.pic._downloadURL}}", alt="post pic", width="100%")
-  div.caption.col-sm-5
+    img.img-rounded.img-responsive(ng-show="selectedPost.pic", ng-src="{{selectedPost.pic._downloadURL}}", alt="post pic", width="100%")
+  div.caption.col-sm-8.blog-post
     btf-markdown(ng-model="selectedPost.body")
 
   div.col-sm-12

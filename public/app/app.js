@@ -4,7 +4,7 @@
 
   var requires = [
 		'ngRoute',
-		'ngAnimate',
+//		'ngAnimate',
 		'ngCookies',
 		'ngResource',
 		'ngTouch',
@@ -12,7 +12,6 @@
 //		'ngStorage',
 		'kinvey',
 		'ui.bootstrap',
-		'ngAnimate',
         'btford.markdown',
 		'th3blog.directives',
 		'th3blog.services',
