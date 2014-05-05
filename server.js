@@ -33,6 +33,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/addPost', routes.index);
+app.get('/addPortfolio', routes.index);
 app.get('/managePosts', routes.index);
 app.get('/learnMyWords', routes.index);
 app.get('/posts', routes.index);
@@ -42,6 +43,7 @@ app.get('/gamer', routes.index);
 app.get('/partials/:partial', routes.partial);
 app.get('/post/:id', routes.index);
 app.get('/editPost/:id', routes.index);
+app.get('/editPortfolio/:id', routes.index);
 //
 //
 //// Routes

@@ -1,0 +1,41 @@
+div.well
+  form(enctype="multipart/form-data", method="post", name="postForm", ng-submit="postFormSubmit(portfolio)")
+    label Name of company and/or product
+    input(type="text", ng-model="portfolio.title", style="width: 90%; margin-left: 10px")
+    br
+    label Project Overview
+    br
+    textarea.add-blog-textarea(ng-model="portfolio.overview")
+
+    label Preview
+    br
+    //btf-markdown.blog-display-preview(ng-show="post.body", style="display: inline-block", ng-model="post.body")
+    p.blog-display-preview(ng-show="portfolio.overview", style="display: inline-block") {{portfolio.overview}}
+    br
+    label Tags
+    br
+    div
+      label new &nbsp;
+      input(style="display: inline-block", type="text", ng-model="tag.name")
+      label background
+      input(style="display: inline-block", type="color", ng-model="tag.color")
+      label text
+      input(style="display: inline-block", type="color", ng-model="tag.textColor")
+      a.btn.btn-small.btn-primary(ng-click="addNewTag(tag)") add tag
+      span &nbsp; | existing tags
+      select(ng-model="selectedTag", ng-change="addTag(selectedTag)", ng-options="tag.name for tag in tags track by tag.name")
+        //option(ng-repeat="tag in tags", ng-click="addTag(tag)") {{tag.name}}
+    br
+    div
+      label added tags &nbsp;
+      span.label.label-info(ng-repeat="tag in portfolio.tags", style="color: {{tag.textColor}}; background-color: {{tag.color}}; margin-right: 2px")
+        span {{tag.name}}
+        i.glyphicon.glyphicon-remove.btn-close(ng-click="removeTag($index)")
+
+    br
+    label Portfolio Pics
+    input.btn.btn-primary.pull-right(type="submit", value="Save")
+    input#postPics(type="file", multiple)
+    br
+    img.limit-image-size(ng-show="portfolio.pics", ng-repeat="pic in portfolio.pics", ng-src="{{pic._downloadURL}}")
+
