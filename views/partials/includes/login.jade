@@ -1,0 +1,16 @@
+form.login.ng-cloak(ng-show="loginBox", autocomplete="on")
+    button.close(type="button", aria-hidden="true", ng-click="loginBox = false") &times;
+    h3
+        i.glyphicon.glyphicon-user
+        span.icon-buffer-left Login
+    div.login-fields
+        input(name="username", type="text", ng-model="userLogin.username", placeholder="username")
+        input(type="password", ng-model="userLogin.password", placeholder="password")
+        input(ng-show="signup", type="password", ng-model="passwordCheck", placeholder="password again")
+        input(name="email", ng-show="signup", type="email", ng-model="userLogin.email", placeholder="email@domain.com")
+    div
+        button.btn.btn-small.btn-success(ng-hide="signup",style="margin:2px", ng-click="login(userLogin)") Login
+        button.btn.btn-small.btn-success(ng-show="signup", style="margin:2px", ng-click="createUser(userLogin)") Create
+        button.btn.btn-small.btn-warning(ng-click="closeLogin()", style="margin:2px") Cancel
+        button.btn.btn-small.btn-info.pull-right(ng-hide="signup", ng-click="signup = true") Sign Up
+        button.btn.btn-small.btn-info.pull-right(ng-show="signup", ng-click="signup = false") Login

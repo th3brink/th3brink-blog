@@ -1,0 +1,41 @@
+div.well
+  form(enctype="multipart/form-data", method="post", name="postForm", ng-submit="postFormSubmit(post)")
+    label Title
+    input(type="text", ng-model="post.title", style="width: 90%; margin-left: 10px")
+    br
+    label Body
+    br
+    textarea.add-blog-textarea(ng-model="post.body")
+    //textarea#epiceditor(ng-model="post.body", ui-epic-editor, style="width: 90%; margin-left: 5px; height: 300px")
+
+    label Preview
+    br
+    btf-markdown.blog-display-preview(ng-show="post.body", style="display: inline-block", ng-model="post.body")
+    br
+    label Tags
+    br
+    div
+      label new &nbsp;
+      input(style="display: inline-block", type="text", ng-model="tag.name")
+      label background
+      input(style="display: inline-block", type="color", ng-model="tag.color")
+      label text
+      input(style="display: inline-block", type="color", ng-model="tag.textColor")
+      a.btn.btn-small.btn-primary(ng-click="addNewTag(tag)") add tag
+      span &nbsp; | existing tags
+      select(ng-model="selectedTag", ng-change="addTag(selectedTag)", ng-options="tag.name for tag in tags track by tag.name")
+        //option(ng-repeat="tag in tags", ng-click="addTag(tag)") {{tag.name}}
+    br
+    div
+      label added tags &nbsp;
+      span.label.label-info(ng-repeat="tag in post.tags", style="color: {{tag.textColor}}; background-color: {{tag.color}}; margin-right: 2px")
+        span {{tag.name}}
+        i.glyphicon.glyphicon-remove.btn-close(ng-click="removeTag($index)")
+
+    br
+    label Blog Pic
+    input.btn.btn-primary.pull-right(type="submit", value="Post")
+    input#postPic(type="file")
+    br
+    img(ng-show="post.pic", ng-src="{{post.pic._downloadURL}}")
+

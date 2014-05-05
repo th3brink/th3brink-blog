@@ -1,0 +1,57 @@
+
+
+div.well
+  h2 Create Word
+  input(type="text", placeholder="Title", ng-model="newWord.title")
+  textarea(placeholder="Definition", ng-model="newWord.definition")
+  label priority
+  select(ng-model="newWord.priority")
+    option 0
+    option 1
+    option 2
+    option 3
+    option 4
+    option 5
+
+  label Status
+  select(ng-model="newWord.status")
+    option learning
+    option know
+    option forgot
+    option test
+    option don't know
+
+  label Tag
+  select(ng-model="newWord.tags", ng-multiple)
+    option(ng-repeat="tag in tags") {{tag}}
+
+  label Group
+  select(ng-model="newWord.groups", ng-multiple)
+    option(ng-repeat="group in groups") {{group}}
+
+  label label
+  select(ng-model="newWord.labels", ng-multiple)
+    option(ng-repeat="label in labels") {{label}}
+
+  a.btn.btn-success.pull-right(ng-click="saveWord(newWord)") Save Word
+
+  hr
+  h2 Create Label
+  input(type="text", placeholder="label", ng-model="newLabel")
+  a.btn.btn-success.pull-right(ng-click="saveLabel({name: newLabel}, true)") Save Label
+
+  hr
+  h2 Create Tag
+  input(type="text", placeholder="tag", ng-model="newTag")
+  a.btn.btn-success.pull-right(ng-click="saveTag({name: newTag}, true)") Save Tag
+
+  hr
+  h2 Create Group
+  input(type="text", placeholder="group", ng-model="newGroup")
+  a.btn.btn-success.pull-right(ng-click="saveGroup({name: newGroup}, true)") Save Group
+
+div.well
+  div.list-group
+    a.list-group-item(ng-repeat="word in words", href="")
+      i.pull-right.glyphicon.glyphicon-remove.btn-close(ng-click="removeWord(word, $index)")
+      span {{word.title}}

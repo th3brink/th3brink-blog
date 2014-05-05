@@ -1,0 +1,68 @@
+// Copyright (c) 8/20/13 Green Seed Technologies, Inc. All rights reserved.
+// Author: James Brinkerhoff <james.brinkerhoff@greenseedtechnologies.com>
+
+
+div.col-12.well
+  div.col-sm-12
+    h4.pull-right {{selectedPost.datetime | date: 'mediumDate'}}
+    h2 {{selectedPost.title}}
+
+  div.col-sm-12
+    p.meta-blog.clearfix
+      i.glyphicon.glyphicon-comment.buffer-right
+      a(ng-click="showComments = !showComments") {{selectedPost.comments.length}} Comments
+      span.buffer |
+      i.glyphicon.glyphicon-share.buffer-right
+      a() {{selectedPost.shares.length}} shares
+      span.buffer |
+      i.glyphicon.glyphicon-user.buffer-right
+      a() {{selectedPost.username}}
+      span.buffer |
+      i.glyphicon.glyphicon-tag.buffer-right
+      span.buffer-right Tags:
+      a.cancel-pointer
+        span.label.label-info(ng-repeat="tag in selectedPost.tags", style="color: {{tag.textColor}}; background-color: {{tag.color}}; margin-right: 2px")
+          span {{tag.name}}
+
+  div.col-sm-4
+    img.img-rounded.img-responsive(ng-src="{{selectedPost.pic._downloadURL}}", alt="post pic", width="100%")
+  div.caption.col-sm-5
+    btf-markdown(ng-model="selectedPost.body")
+
+  div.col-sm-12
+    hr()
+    div(style="margin-top: 5px; padding-top: 2px; height: 15px;")
+      span.pull-left(ng-show="selectedPost.comments.length > 0")
+        div.btn.btn-small.btn-info(ng-hide="showComments", ng-click="showComments = true") Show Comments
+        div.btn.btn-small.btn-info(ng-show="showComments", ng-click="showComments = false") Hide Comments
+      span.pull-right.pointer(ng-show="user.username")
+        a.btn.btn-small.btn-info(ng-click="showAddComment = true") Add Comment
+      span.pull-right(ng-hide="user.username") Login to Comment
+      //span(style="background-color: #059BD8; margin-left: 30px;") {{build.attr.votes+'%'}}
+
+    div(ng-show="showAddComment")
+      h3 Add Comment
+        a.btn.normal-font.pull-right(ng-click="showAddComment = false") hide
+      label Subject
+      br
+      input(type="text", style="width:70%", ng-model="comment.subject")
+      br
+      label Comment
+      textarea(style="width:97%;", cols="30", rows="4", ng-model="comment.comment")
+      span.label.label-warning.pull-left(ng-show="commentError") {{commentError}}
+      a.offset9.btn.btn-primary.pull-right(style="margin-top: 10px;", ng-click="addComment(comment, user.username)") Submit Comment
+
+    hr(ng-show="selectedPost.comments.length > 0 && showComments")
+
+    div(ng-show="selectedPost.comments.length > 0 && showComments")
+      //h3 Comments({{selectedPost.comments.length}})
+        a.btn.btn-info.offset7(style="font-size: 12px; margin-right:10px; font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;", ng-click="showAddComment = true") Add Comment
+        a.btn.normal-font(ng-click="showComments = false") hide
+      div(ng-repeat="comment in selectedPost.comments")
+        div.comment-content(style="padding: 5px;")
+          div
+            h4.media-heading {{comment.subject}}
+              span.pull-right
+                span.button-flat(style="background-color: #FAA936;", ng-show="comment.username == user.username", ng-click="removeComment( $index)") remove
+                span {{comment.username+' | '}} {{comment.updated | date: short}}
+            p {{comment.comment}}

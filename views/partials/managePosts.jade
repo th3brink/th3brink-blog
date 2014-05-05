@@ -1,0 +1,7 @@
+
+div.well
+  div.list-group
+    a.list-group-item(ng-repeat="post in posts")
+      i.pull-right.btn.btn-small.btn-danger(ng-click="deletePost(post._id, $index)") Delete
+      i.pull-right.btn.btn-small.btn-info(ng-click="editPost(post._id)") Edit
+      span {{post.title}}
