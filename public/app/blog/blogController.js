@@ -195,7 +195,7 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
 
 app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $location) {
     $rootScope.navLocation = 'blog';
-    $scope.showSideBar = true;
+    $scope.showSideBar = false;
     $scope.search = {
         body: '',
         tags: []
