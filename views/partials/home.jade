@@ -27,7 +27,7 @@ div.row()
               span {{tag.name}}
 
       div.col-sm-4
-        img.img-rounded.img-responsive(ng-src="{{post.pic._downloadURL}}", alt="post pic", width="100%")
+        img.img-rounded.img-responsive(ng-src="{{post.pics[0]._downloadURL}}", alt="post pic", width="100%")
       div.caption.col-sm-8.blog-post
         btf-markdown(ng-model="post.body")
       p.row
@@ -40,7 +40,7 @@ div
         div.bar-tab-icon-right
           span.glyphicon(ng-class="{true:'glyphicon-chevron-right', false:'glyphicon-chevron-left'}[showSideBar]")
       div.row
-        h2(style=) Search
+        h2() Search
         input(type="text", ng-model="search.body")
         hr
       div.row

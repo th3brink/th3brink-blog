@@ -25,7 +25,9 @@ app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, 
     $scope.tags = [];
     $scope.post = {
         body: '',
-        tags: []
+        tags: [],
+        pics: [],
+        live: false
     };
 
     $scope.tag = {
@@ -66,9 +68,25 @@ app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, 
         $scope.post.tags.splice(index, 1);
     };
 
-    $scope.postFormSubmit = function (post) {
+    function saveImage (pics, index, post, cb) {
+        var fileUploadedPromise = $kinvey.File.upload(pics[index]);
+        fileUploadedPromise.then(function (res) {
+            post.pics.push({
+                _type: 'KinveyFile',
+                _id: res._id
+            });
+            if (pics.length > index+1) saveImage(pics, index+1, post, cb);
+            else cb();
+        });
+    }
 
-        var postPic = document.getElementById('postPic').files[0];
+    $scope.quickSave = function (post) {
+        $scope.postFormSubmit(post, false)
+    };
+    $scope.postFormSubmit = function (post, changePath) {
+        if (changePath === undefined) changePath = true;
+
+        var pics = document.getElementById('postPics').files;
         cleanupAngularObject(post);
 
         function save () {
@@ -80,21 +98,15 @@ app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, 
             var postSavedPromise = $kinvey.DataStore.save('Blogs', post);
 
             postSavedPromise.then(function (){
-                $location.path('/');
+                if (changePath) $location.path('/');
             });
 
         }
-        if (postPic) {
-            var fileUploadedPromise = $kinvey.File.upload(postPic);
-            fileUploadedPromise.then(function (res) {
-                post.pic = {
-                    _type: 'KinveyFile',
-                    _id: res._id
-
-                };
+        if (pics) {
+            saveImage(pics, 0, post, function () {
                 save();
-
             });
+
         } else {
             save();
 
@@ -107,7 +119,9 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
     $scope.tags = [];
     $scope.post = {
         body: '',
-        tags: []
+        tags: [],
+        pics: [],
+        live: false
     };
 
     $scope.tag = {
@@ -157,34 +171,43 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
         $scope.post.tags.splice(index, 1);
     };
 
+    function saveImage (pics, index, post, cb) {
+        var fileUploadedPromise = $kinvey.File.upload(pics[index]);
+        fileUploadedPromise.then(function (res) {
+            post.pics.push({
+                _type: 'KinveyFile',
+                _id: res._id
+            });
+            if (pics.length > index+1) saveImage(pics, index+1, post, cb);
+            else cb();
+        });
+    }
 
-    $scope.postFormSubmit = function (post) {
+    $scope.quickSave = function (post) {
+        $scope.postFormSubmit(post, false)
+    };
+    $scope.postFormSubmit = function (post, changePath) {
+        if (changePath === undefined) changePath = true;
         if (post.username !== $rootScope.user.username) {
             $location.path('/');
         }
-        var postPic = document.getElementById('postPic').files[0];
+        var pics = document.getElementById('postPics').files;
         cleanupAngularObject(post);
 
         function save () {
-            post.datetime = new Date();
+            if (!post.datetime) post.datetime = new Date();
             var postSavedPromise = $kinvey.DataStore.save('Blogs', post);
 
             postSavedPromise.then(function (){
-                $location.path('/');
+                if (changePath) $location.path('/');
             });
 
         }
-        if (postPic) {
-            var fileUploadedPromise = $kinvey.File.upload(postPic);
-            fileUploadedPromise.then(function (res) {
-                post.pic = {
-                    _type: 'KinveyFile',
-                    _id: res._id
-
-                };
+        if (pics) {
+            saveImage(pics, 0, post, function () {
                 save();
-
             });
+
         } else {
             save();
 
@@ -198,7 +221,8 @@ app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $locatio
     $scope.showSideBar = false;
     $scope.search = {
         body: '',
-        tags: []
+        tags: [],
+        live: true
     };
 
     $scope.addTagSearch = function (tagName, index) {

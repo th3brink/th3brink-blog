@@ -33,9 +33,15 @@ div.well
         i.glyphicon.glyphicon-remove.btn-close(ng-click="removeTag($index)")
 
     br
-    label Blog Pic
-    input.btn.btn-primary.pull-right(type="submit", value="Post")
-    input#postPic(type="file")
+    div
+      label Go Live?
+      input(type="checkbox", ng-model="post.live")
     br
-    img.limit-image-size(ng-show="post.pic", ng-src="{{post.pic._downloadURL}}")
+    label Blog Pics
+    input.btn.btn-primary.pull-right(type="submit", value="Post")
+    a.btn.btn-success.pull-right(style="margin-right: 2px", ng-click="quickSave(post)") Save
+    input#postPics(type="file", multiple)
+    br
+    div(ng-show="post.pics", ng-repeat="pic in post.pics")
+      img.limit-image-size(ng-src="{{pic._downloadURL}}")
 
