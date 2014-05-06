@@ -27,7 +27,11 @@ div.col-12.well(ng-show="selectedPost.body")
           span {{tag.name}}
 
   div.col-sm-4
-    img.img-rounded.img-responsive(ng-show="selectedPost.pic", ng-src="{{selectedPost.pic._downloadURL}}", alt="post pic", width="100%")
+    img.img-rounded.img-responsive(ng-show="selectedPost.pics.length == 1", ng-src="{{selectedPost.pics[0]._downloadURL}}", alt="post pic", width="100%")
+    carousel(ng-show="selectedPost.pics.length > 1", interval="7000")
+      slide(ng-repeat="slide in selectedPost.pics", active="slide.active")
+        img(ng-src="{{slide._downloadURL}}", style="margin:auto;", alt="post pic", width="100%")
+
   div.caption.col-sm-8.blog-post
     btf-markdown(ng-model="selectedPost.body")
 
@@ -68,3 +72,4 @@ div.col-12.well(ng-show="selectedPost.body")
                 span.button-flat(style="background-color: #FAA936;", ng-show="comment.username == user.username", ng-click="removeComment( $index)") remove
                 span {{comment.username+' | '}} {{comment.updated | date: short}}
             p {{comment.comment}}
+

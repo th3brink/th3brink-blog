@@ -26,7 +26,15 @@ div
       a(href='/') Blog
     #showcase.divider
       h3 Showcase
-    ul.hoverbox
+        span.glyphicon.glyphicon-chevron-left.pointer.pull-left
+        span.glyphicon.glyphicon-chevron-right.pointer.pull-right
+    div.col-sm-6
+      img.img-rounded.img-responsive(ng-src="{{portfolios[0].pics[0]._downloadURL}}", style="margin:auto;", alt="post pic", width="100%")
+    span.portfolio-content.col-sm-4
+      h4 {{portfolios[0].title}}
+      p {{portfolios[0].overview}}
+
+    //ul.hoverbox
       li.showcaseItem
         a(href='#')
           img.smallItem(src='img/showcase/NovatekDotNet.PNG')

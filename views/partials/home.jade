@@ -27,7 +27,11 @@ div.row()
               span {{tag.name}}
 
       div.col-sm-4
-        img.img-rounded.img-responsive(ng-src="{{post.pics[0]._downloadURL}}", alt="post pic", width="100%")
+        img.img-rounded.img-responsive(ng-show="post.pics.length == 1", ng-src="{{post.pics[0]._downloadURL}}", alt="post pic", width="100%")
+        carousel(ng-show="post.pics.length > 1", interval="7000")
+          slide(ng-repeat="slide in post.pics", active="slide.active")
+            img(ng-src="{{slide._downloadURL}}", style="margin:auto;", alt="post pic", width="100%")
+
       div.caption.col-sm-8.blog-post
         btf-markdown(ng-model="post.body")
       p.row

@@ -12,6 +12,8 @@
 //		'ngStorage',
 		'kinvey',
 		'ui.bootstrap',
+		'ui.bootstrap.tpls',
+		'ui.bootstrap.transition',
         'btford.markdown',
 		'th3blog.directives',
 		'th3blog.services',
@@ -66,6 +68,7 @@ var app = angular.module('th3brink', requires)
             var promise = $kinvey.DataStore.find('Portfolio');
             promise.then(function(portfolios){
                 $scope.portfolios = portfolios;
+                console.log($scope.portfolios)
             });
 
         };
