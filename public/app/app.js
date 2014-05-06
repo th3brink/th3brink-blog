@@ -60,7 +60,7 @@ var app = angular.module('th3brink', requires)
     })
 
 
-    .controller('PortfolioCtrl', function ($scope, $rootScope, $kinvey, User) {
+    .controller('PortfolioCtrl', function ($scope, $rootScope, $modal, $kinvey, User) {
         $rootScope.navLocation = 'portfolio';
         $scope.portfolios = [];
 
@@ -75,6 +75,20 @@ var app = angular.module('th3brink', requires)
 
         if (User.loaded) onLoad();
         User.addObserver(onLoad);
+
+        $scope.open = function (size, image, title) {
+
+            var modalInstance = $modal.open({
+                templateUrl: 'myModalContent.html',
+                controller: ModalInstanceCtrl,
+                size: size,
+                resolve: {
+                    portfolio: function () {
+                        return {pic: image, title: title};
+                    }
+                }
+            });
+        };
 
     })
 
@@ -225,4 +239,15 @@ var app = angular.module('th3brink', requires)
               }
           }
       }
+  };
+
+  var ModalInstanceCtrl = function ($scope, $modalInstance, portfolio) {
+      $scope.portfolio = portfolio;
+      $scope.ok = function () {
+          $modalInstance.close($scope.selected.item);
+      };
+
+      $scope.cancel = function () {
+          $modalInstance.dismiss('cancel');
+      };
   };

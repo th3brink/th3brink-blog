@@ -26,35 +26,46 @@ div
       a(href='/') Blog
     #showcase.divider
       h3 Showcase
-        span.glyphicon.glyphicon-chevron-left.pointer.pull-left
-        span.glyphicon.glyphicon-chevron-right.pointer.pull-right
-    div.col-sm-6
+        //span.glyphicon.glyphicon-chevron-left.pointer.pull-left
+        //span.glyphicon.glyphicon-chevron-right.pointer.pull-right
+    //div.col-sm-6
       img.img-rounded.img-responsive(ng-src="{{portfolios[0].pics[0]._downloadURL}}", style="margin:auto;", alt="post pic", width="100%")
-    span.portfolio-content.col-sm-4
+    //span.portfolio-content.col-sm-4
       h4 {{portfolios[0].title}}
       p {{portfolios[0].overview}}
+    script(type="text/ng-template", id="myModalContent.html")
+      div.modal-header
+        h3.modal-title {{portfolio.title}}
 
-    //ul.hoverbox
+      div.modal-body
+        img(src="{{portfolio.pic}}", width="100%")
+
+      //div.modal-footer
+        button.btn btn-primary(ng-click="ok()") OK
+        button.btn.btn-warning(ng-click="cancel()") Cancel
+
+
+    ul.hoverbox
       li.showcaseItem
-        a(href='#')
-          img.smallItem(src='img/showcase/NovatekDotNet.PNG')
-          img.preview(src='img/showcase/NovatekDotNet.PNG')
+        a
+          img.smallItem(src='img/showcase/NovatekDotNet.PNG', ng-click="open('lg', 'img/showcase/NovatekDotNet.PNG', 'Novatek')")
+          //img.preview(src='img/showcase/NovatekDotNet.PNG')
       li.showcaseItem
-        a(href='#')
-          img.smallItem(src='img/showcase/WekGamer.PNG')
-          img.preview(src='img/showcase/WekGamer.PNG')
+        a
+          img.smallItem(src='img/showcase/WekGamer.PNG', ng-click="open('lg', 'img/showcase/WekGamer.PNG', 'WekGamer')")
+          //img.preview(src='img/showcase/WekGamer.PNG')
       li.showcaseItem
-        a(href='#')
-          img.smallItem(src='img/showcase/BusinessCentral-Screenshot.PNG')
-          img.preview(src='img/showcase/BusinessCentral-Screenshot.PNG')
+        a
+          img.smallItem(src='img/showcase/BusinessCentral-Screenshot.PNG', ng-click="open('lg', 'img/showcase/BusinessCentral-Screenshot.PNG', 'Centralify')")
+          //img.preview(src='img/showcase/BusinessCentral-Screenshot.PNG')
       li.showcaseItem
-        a(href='#')
-          img.smallItem(src='img/showcase/SilverWoodMng.PNG')
-          img.preview(src='img/showcase/SilverWoodMng.PNG')
+        a
+          img.smallItem(src='img/showcase/SilverWoodMng.PNG', ng-click="open('lg', 'img/showcase/SilverWoodMng.PNG', 'Silverwood Management')")
+          //img.preview(src='img/showcase/SilverWoodMng.PNG')
       li.showcaseItem
-        a(href='#')
-          img.smallItem(src='img/showcase/LoL_counter_builds.png')
-          img.preview(src='img/showcase/LoL_counter_builds.png')
+        a
+          img.smallItem(src='img/showcase/LoL_counter_builds.png', ng-click="open('lg', 'img/showcase/LoL_counter_builds.png', 'LoL Counter Builds')")
+          //img.preview(src='img/showcase/LoL_counter_builds.png')
 
     #projectsTitle.divider
       h3 Projects
