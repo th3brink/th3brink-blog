@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e58308d-17d3-4b68-867d-b17b53fb67f7" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\james\Dropbox\Brink_Labs\th3brink-blog\public\js\ui-bootstrap-tpls-0.9.0.min.js" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\james\Dropbox\Brink_Labs\th3brink-blog\public\js\ui-bootstrap-tpls-0.9.0.js" afterPath="$PROJECT_DIR$/public/js/ui-bootstrap-tpls.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/addPortfolio.jade" afterPath="$PROJECT_DIR$/views/partials/addPortfolio.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/addPost.jade" afterPath="$PROJECT_DIR$/views/partials/addPost.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/app.js" afterPath="$PROJECT_DIR$/public/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/home.jade" afterPath="$PROJECT_DIR$/views/partials/home.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/portfolio.jade" afterPath="$PROJECT_DIR$/views/partials/portfolio.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/postView.jade" afterPath="$PROJECT_DIR$/views/partials/postView.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/blog/blogController.js" afterPath="$PROJECT_DIR$/public/app/blog/blogController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -38,8 +35,18 @@
           <file leaf-file-name="addPost.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/partials/addPost.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-                  <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+                  <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="76" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="addPortfolio.jade" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/partials/addPortfolio.jade">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.6353692" vertical-offset="0" max-vertical-offset="1097">
+                  <caret line="41" column="80" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
                   <folding />
                 </state>
               </provider>
@@ -50,19 +57,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1836">
                   <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
-                  <folding>
-                    <marker date="1399348769310" expanded="true" signature="4222:4453" placeholder="{...}" />
-                    <marker date="1399348769310" expanded="true" signature="4273:4317" placeholder="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="addPortfolio.jade" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/partials/addPortfolio.jade">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-                  <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="116" />
                   <folding />
                 </state>
               </provider>
@@ -81,7 +75,7 @@
           <file leaf-file-name="postView.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/partials/postView.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
+                <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1377">
                   <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
                   <folding />
                 </state>
@@ -108,11 +102,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="portfolio.jade" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="portfolio.jade" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/partials/portfolio.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.3875124" vertical-offset="102" max-vertical-offset="4675">
-                  <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4862">
+                  <caret line="89" column="33" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -121,7 +115,7 @@
           <file leaf-file-name="ui-bootstrap-tpls.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/ui-bootstrap-tpls.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-16.16" vertical-offset="64723" max-vertical-offset="69972">
+                <state vertical-scroll-proportion="0.0" vertical-offset="65229" max-vertical-offset="70074">
                   <caret line="3837" column="21" selection-start-line="3837" selection-start-column="21" selection-end-line="3837" selection-end-column="21" />
                   <folding />
                 </state>
@@ -155,7 +149,7 @@
           <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/app/user/user.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="2729" max-vertical-offset="3570">
+                <state vertical-scroll-proportion="0.0" vertical-offset="2728" max-vertical-offset="3570">
                   <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
                   <folding />
                 </state>
@@ -165,8 +159,8 @@
           <file leaf-file-name="blogController.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/app/blog/blogController.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="6579">
-                  <caret line="144" column="31" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="6817">
+                  <caret line="187" column="4" selection-start-line="187" selection-start-column="0" selection-end-line="190" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -182,31 +176,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.9078295" vertical-offset="6717" max-vertical-offset="7735">
-                  <caret line="449" column="65" selection-start-line="449" selection-start-column="65" selection-end-line="449" selection-end-column="65" />
+                <state vertical-scroll-proportion="-15.44" vertical-offset="4391" max-vertical-offset="7752">
+                  <caret line="281" column="29" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mainController.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/app/mainController.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="408">
-                  <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/app/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="754" max-vertical-offset="3961">
-                  <caret line="64" column="25" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="25" />
+                <state vertical-scroll-proportion="0.30537832" vertical-offset="1671" max-vertical-offset="4437">
+                  <caret line="118" column="41" selection-start-line="118" selection-start-column="41" selection-end-line="118" selection-end-column="41" />
                   <folding />
                 </state>
               </provider>
@@ -246,23 +230,24 @@
         <option value="$PROJECT_DIR$/public/app/services.js" />
         <option value="$PROJECT_DIR$/public/app/blog/main.js" />
         <option value="$PROJECT_DIR$/views/partials/includes/loadWell.jade" />
-        <option value="$PROJECT_DIR$/views/partials/addPortfolio.jade" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/public/app/blog/blogController.js" />
-        <option value="$PROJECT_DIR$/views/partials/addPost.jade" />
         <option value="$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap-tpls.js" />
         <option value="$PROJECT_DIR$/public/js/ui-bootstrap-tpls.js" />
         <option value="$PROJECT_DIR$/views/partials/home.jade" />
         <option value="$PROJECT_DIR$/views/partials/postView.jade" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/views/index.jade" />
-        <option value="$PROJECT_DIR$/public/app/app.js" />
         <option value="$PROJECT_DIR$/views/partials/portfolio.jade" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/public/app/blog/blogController.js" />
+        <option value="$PROJECT_DIR$/views/partials/addPost.jade" />
+        <option value="$PROJECT_DIR$/views/partials/addPortfolio.jade" />
+        <option value="$PROJECT_DIR$/public/app/app.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="29" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="2576" />
     <option name="height" value="1416" />
   </component>
@@ -292,7 +277,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -411,44 +395,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Professional Blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="th3brink-blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Professional Blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="th3brink-blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -478,14 +427,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.server - win">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -496,10 +437,16 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
-      <option name="cucumberJsArguments" />
-      <option name="executablePath" />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
       <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -509,8 +456,10 @@
       <setting name="preferredDebugBrowser" value="Chrome" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" />
+      <option name="executablePath" />
+      <option name="filePath" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -568,7 +517,11 @@
       <created>1399341271587</created>
       <updated>1399341271587</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add modals to the showcase in portfolio.">
+      <created>1399397439630</created>
+      <updated>1399397439630</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -592,19 +545,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="29" y="0" width="2576" height="1416" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18380062" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18351477" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10240252" sideWeight="0.8006354" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32586557" sideWeight="0.50078124" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32554516" sideWeight="0.49921876" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12538941" sideWeight="0.49921876" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -635,12 +588,37 @@
     <MESSAGE value="added analytics" />
     <MESSAGE value="fixed portfolio nav points." />
     <MESSAGE value="added multiple pics to post." />
-    <option name="LAST_COMMIT_MESSAGE" value="added multiple pics to post." />
+    <MESSAGE value="add modals to the showcase in portfolio." />
+    <option name="LAST_COMMIT_MESSAGE" value="add modals to the showcase in portfolio." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6717" max-vertical-offset="7735">
+          <caret line="449" column="65" selection-start-line="449" selection-start-column="65" selection-end-line="449" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/mainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="408">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="754" max-vertical-offset="3961">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1665">
@@ -850,21 +828,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36646706" vertical-offset="51" max-vertical-offset="2397">
           <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/img/blue-black-spinner.gif">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/user/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2729" max-vertical-offset="3570">
-          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/includes/loadWell.jade">
@@ -883,91 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/mainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1292">
-          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/user/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/addPortfolio.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/blog/blogController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="6579">
-          <caret line="144" column="31" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/addPost.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="384863">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap-tpls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3806048" vertical-offset="64830" max-vertical-offset="70074">
-          <caret line="3835" column="0" selection-start-line="3835" selection-start-column="0" selection-end-line="3837" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1399348444796" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1399348444796" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/blog/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/postView.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
@@ -980,17 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1836">
           <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
-          <folding>
-            <marker date="1399348769310" expanded="true" signature="4222:4453" placeholder="{...}" />
-            <marker date="1399348769310" expanded="true" signature="4273:4317" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="754" max-vertical-offset="3961">
-          <caret line="64" column="25" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1005,24 +878,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/ui-bootstrap-tpls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.16" vertical-offset="64723" max-vertical-offset="69972">
+        <state vertical-scroll-proportion="0.0" vertical-offset="65229" max-vertical-offset="70074">
           <caret line="3837" column="21" selection-start-line="3837" selection-start-column="21" selection-end-line="3837" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/user/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2729" max-vertical-offset="3570">
+          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1292">
+          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/blog/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/user/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/mainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24794894" vertical-offset="0" max-vertical-offset="1097">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9078295" vertical-offset="6717" max-vertical-offset="7735">
-          <caret line="449" column="65" selection-start-line="449" selection-start-column="65" selection-end-line="449" selection-end-column="65" />
+        <state vertical-scroll-proportion="-15.44" vertical-offset="4391" max-vertical-offset="7752">
+          <caret line="281" column="29" selection-start-line="281" selection-start-column="20" selection-end-line="281" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/portfolio.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3875124" vertical-offset="102" max-vertical-offset="4675">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4862">
+          <caret line="89" column="33" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/addPost.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/blog/blogController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="6817">
+          <caret line="187" column="4" selection-start-line="187" selection-start-column="0" selection-end-line="190" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/addPortfolio.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6353692" vertical-offset="0" max-vertical-offset="1097">
+          <caret line="41" column="80" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30537832" vertical-offset="1671" max-vertical-offset="4437">
+          <caret line="118" column="41" selection-start-line="118" selection-start-column="41" selection-end-line="118" selection-end-column="41" />
           <folding />
         </state>
       </provider>

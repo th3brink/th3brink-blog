@@ -102,7 +102,7 @@ app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, 
             });
 
         }
-        if (pics) {
+        if (pics.length > 0) {
             saveImage(pics, 0, post, function () {
                 save();
             });
@@ -114,6 +114,9 @@ app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, 
     };
 });
 
+/*
+ * EDIT POST CTRL
+ * */
 app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location, $routeParams, User) {
     $rootScope.navLocation = 'blog';
     $scope.tags = [];
@@ -183,6 +186,10 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
         });
     }
 
+    $scope.removeImage = function (index) {
+        $scope.post.pics.splice(index, 1);
+    };
+
     $scope.quickSave = function (post) {
         $scope.postFormSubmit(post, false)
     };
@@ -203,7 +210,7 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
             });
 
         }
-        if (pics) {
+        if (pics.length > 0) {
             saveImage(pics, 0, post, function () {
                 save();
             });
@@ -216,6 +223,9 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
 
 });
 
+/*
+ * BLOG POST CTRL
+ * */
 app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $location) {
     $rootScope.navLocation = 'blog';
     $scope.showSideBar = false;
@@ -258,6 +268,7 @@ app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $locatio
         var BlogsP = $kinvey.DataStore.find('Blogs');
         BlogsP.then(function(posts){
             $scope.posts = posts;
+            console.log(posts)
         });
 
         var TagsP = $kinvey.DataStore.find('Tags');
@@ -345,6 +356,9 @@ app.controller('PostCtrl', function ($scope, $rootScope, $routeParams, $kinvey, 
     };
 });
 
+/*
+ * MANAGE POST CTRL
+ * */
 app.controller('ManageCtrl', function ($scope, $rootScope, $kinvey, User, $location) {
     $rootScope.navLocation = 'blog';
 

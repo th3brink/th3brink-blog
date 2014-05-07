@@ -68,7 +68,6 @@ var app = angular.module('th3brink', requires)
             var promise = $kinvey.DataStore.find('Portfolio');
             promise.then(function(portfolios){
                 $scope.portfolios = portfolios;
-                console.log($scope.portfolios)
             });
 
         };
@@ -165,6 +164,10 @@ var app = angular.module('th3brink', requires)
             });
         }
 
+        $scope.removeImage = function (index) {
+            $scope.portfolio.pics.splice(index, 1);
+        };
+
         $scope.postFormSubmit = function (portfolio) {
 
             var pics = document.getElementById('postPics').files;
@@ -176,11 +179,11 @@ var app = angular.module('th3brink', requires)
                 var postSavedPromise = $kinvey.DataStore.save('Portfolio', portfolio);
 
                 postSavedPromise.then(function (){
-                    $location.path('/');
+                    $location.path('/portfolio');
                 });
 
             }
-            if (pics) {
+            if (pics.length > 0) {
                 saveImage(pics, 0, portfolio, function () {
                     save();
                 });

@@ -44,4 +44,5 @@ div.well
     br
     div(ng-show="post.pics", ng-repeat="pic in post.pics")
       img.limit-image-size(ng-src="{{pic._downloadURL}}")
+      i.glyphicon.glyphicon-remove.btn-close(ng-click="removeImage($index)")
 

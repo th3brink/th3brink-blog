@@ -37,5 +37,7 @@ div.well
     input.btn.btn-primary.pull-right(type="submit", value="Save")
     input#postPics(type="file", multiple)
     br
-    img.limit-image-size(ng-show="portfolio.pics", ng-repeat="pic in portfolio.pics", ng-src="{{pic._downloadURL}}")
+    div(ng-show="portfolio.pics", ng-repeat="pic in portfolio.pics")
+      img.limit-image-size(ng-src="{{pic._downloadURL}}")
+      i.glyphicon.glyphicon-remove.btn-close(ng-click="removeImage($index)")
 
