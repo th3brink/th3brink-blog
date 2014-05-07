@@ -268,7 +268,7 @@ app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $locatio
         var BlogsP = $kinvey.DataStore.find('Blogs');
         BlogsP.then(function(posts){
             $scope.posts = posts;
-            console.log(posts)
+//            console.log(posts)
         });
 
         var TagsP = $kinvey.DataStore.find('Tags');

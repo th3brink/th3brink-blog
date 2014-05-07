@@ -39,6 +39,10 @@ var app = angular.module('th3brink', requires)
             controller: 'PortfolioCtrl',
             templateUrl: '/partials/portfolio'
 
+        }).when('/managePortfolio', {
+            controller: 'ManagePortfolioCtrl',
+            templateUrl: '/partials/managePortfolio'
+
         }).when('/addPortfolio', {
             controller: 'AddPortfolioCtrl',
             templateUrl: '/partials/addPortfolio'
@@ -75,15 +79,15 @@ var app = angular.module('th3brink', requires)
         if (User.loaded) onLoad();
         User.addObserver(onLoad);
 
-        $scope.open = function (size, image, title) {
+        $scope.open = function (portfolio) {
 
             var modalInstance = $modal.open({
                 templateUrl: 'myModalContent.html',
                 controller: ModalInstanceCtrl,
-                size: size,
+                size: 'lg',
                 resolve: {
                     portfolio: function () {
-                        return {pic: image, title: title};
+                        return portfolio;
                     }
                 }
             });
@@ -224,6 +228,36 @@ var app = angular.module('th3brink', requires)
 
   });
 
+  /*
+   * MANAGE portfolio POST CTRL
+   * */
+  app.controller('ManagePortfolioCtrl', function ($scope, $rootScope, $kinvey, User, $location) {
+      $rootScope.navLocation = 'portfolio';
+
+      $scope.portfolios = [];
+
+      var onLoad = function () {
+          var BlogsP = $kinvey.DataStore.find('Portfolio');
+          BlogsP.then(function(portfolios){
+              $scope.portfolios = portfolios;
+          });
+      };
+
+      if (User.loaded) onLoad();
+      User.addObserver(onLoad);
+
+      $scope.deletePortfolio = function (id, index) {
+          var promise = $kinvey.DataStore.destroy('Portfolio', id);
+          promise.then(function () {
+              $scope.posts.splice(index, 1);
+          });
+      };
+
+      $scope.editPortfolio = function (id) {
+          $location.path('/editPortfolio/'+id);
+      };
+
+  });
 
 
   var cleanupAngularObject = function(value) {

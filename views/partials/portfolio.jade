@@ -38,7 +38,10 @@ div
         h3.modal-title {{portfolio.title}}
 
       div.modal-body
-        img(src="{{portfolio.pic}}", width="100%")
+        p {{portfolio.overview}}
+        carousel(ng-show="portfolio.pics.length > 0", interval="7000")
+          slide(ng-repeat="slide in portfolio.pics", active="slide.active")
+            img(ng-src="{{slide._downloadURL}}", style="margin:auto;", alt="portfolio pic", width="100%")
 
       //div.modal-footer
         button.btn btn-primary(ng-click="ok()") OK
@@ -46,26 +49,11 @@ div
 
 
     ul.hoverbox
-      li.showcaseItem
-        a
-          img.smallItem(src='img/showcase/NovatekDotNet.PNG', ng-click="open('lg', 'img/showcase/NovatekDotNet.PNG', 'Novatek')")
-          //img.preview(src='img/showcase/NovatekDotNet.PNG')
-      li.showcaseItem
-        a
-          img.smallItem(src='img/showcase/WekGamer.PNG', ng-click="open('lg', 'img/showcase/WekGamer.PNG', 'WekGamer')")
-          //img.preview(src='img/showcase/WekGamer.PNG')
-      li.showcaseItem
-        a
-          img.smallItem(src='img/showcase/BusinessCentral-Screenshot.PNG', ng-click="open('lg', 'img/showcase/BusinessCentral-Screenshot.PNG', 'Centralify')")
-          //img.preview(src='img/showcase/BusinessCentral-Screenshot.PNG')
-      li.showcaseItem
-        a
-          img.smallItem(src='img/showcase/SilverWoodMng.PNG', ng-click="open('lg', 'img/showcase/SilverWoodMng.PNG', 'Silverwood Management')")
-          //img.preview(src='img/showcase/SilverWoodMng.PNG')
-      li.showcaseItem
-        a
-          img.smallItem(src='img/showcase/LoL_counter_builds.png', ng-click="open('lg', 'img/showcase/LoL_counter_builds.png', 'LoL Counter Builds')")
-          //img.preview(src='img/showcase/LoL_counter_builds.png')
+      li.showcase-item(ng-repeat="portfolio in portfolios")
+        a(ng-click="open(portfolio)")
+          img.smallItem(ng-src="{{portfolio.pics[0]._downloadURL}}")
+          p.showcase-font {{portfolio.title}}
+
 
     #projectsTitle.divider
       h3 Projects
@@ -77,6 +65,7 @@ div
       a.contact-highlight.highlight-hover(href='http://www.LoLCounterSim.com/', target='_blank') LoL Counter Simulator
       a.contact-highlight.highlight-hover(href='https://vortex.theredx.com/', target='_blank') Vortex
       a.contact-highlight.highlight-hover(href='https://www.novatek.com/', target='_blank') Novatek Patent Module
+      a.contact-highlight.highlight-hover(href='http://www.greenfieldenergyco.com/', target='_blank') Green Field Energy
       a.contact-highlight.highlight-hover Brinkerhoff Insurance
       //a.contact-highlight.highlight-hover Silverwood Management
       //a.contact-highlight.highlight-hover Centralify

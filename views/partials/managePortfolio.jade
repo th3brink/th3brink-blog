@@ -1,0 +1,7 @@
+
+div.well
+  div.list-group
+    a.list-group-item(ng-repeat="portfolio in portfolios")
+      i.pull-right.btn.btn-small.btn-danger(ng-click="deletePortfolio(portfolio._id, $index)") Delete
+      i.pull-right.btn.btn-small.btn-info(ng-click="editPortfolio(portfolio._id)") Edit
+      span {{portfolio.title}}

@@ -53,6 +53,8 @@ html(ng-app="th3brink", lang="en")
                 li(ng-show="user.type === 'admin'")
                   a(href="/managePosts") Manage Posts
                 li(ng-show="user.type === 'admin'")
+                  a(href="/managePortfolio") Manage portfolio
+                li(ng-show="user.type === 'admin'")
                   a(href="/learnMyWords") Learn My Words
                 li
                   a(ng-click="logout()") Logout

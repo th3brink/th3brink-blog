@@ -57,14 +57,26 @@ body {
     padding-right: 10px;
 }
 
-.showcaseItem {
+.showcase-item {
     margin: 10px;
+    width: 200px;
 }
 
-.showcaseItem img {
-    width: 200px;
-    height: inherit;
+.showcase-item img,
+.showcase-item a {
+    width: 100% !important;
+    /*height: inherit;*/
+}
 
+.showcase-font {
+    font-style: normal;
+    text-decoration : none !important;
+    background-color: #3c3c3c;
+    padding: 0 2px;
+    border-radius: 2px;
+    color: #439cf1;
+    text-align: center;
+    /*width: 90%;*/
 }
 
 .divider {

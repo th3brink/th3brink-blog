@@ -35,6 +35,7 @@ app.get('/', routes.index);
 app.get('/addPost', routes.index);
 app.get('/addPortfolio', routes.index);
 app.get('/managePosts', routes.index);
+app.get('/managePortfolio', routes.index);
 app.get('/learnMyWords', routes.index);
 app.get('/posts', routes.index);
 app.get('/portfolio', routes.index);
