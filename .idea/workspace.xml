@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e58308d-17d3-4b68-867d-b17b53fb67f7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/addPortfolio.jade" afterPath="$PROJECT_DIR$/views/partials/addPortfolio.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/app.js" afterPath="$PROJECT_DIR$/public/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/portfolio.jade" afterPath="$PROJECT_DIR$/views/partials/portfolio.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -124,11 +121,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="portfolio.jade" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="portfolio.jade" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/partials/portfolio.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.51175916" vertical-offset="374" max-vertical-offset="4726">
-                  <caret line="54" column="78" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
+                <state vertical-scroll-proportion="0.5277516" vertical-offset="527" max-vertical-offset="4726">
+                  <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -188,21 +185,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-26.36" vertical-offset="650" max-vertical-offset="8160">
-                  <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+                <state vertical-scroll-proportion="0.39754486" vertical-offset="1755" max-vertical-offset="8177">
+                  <caret line="128" column="20" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/app/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6308113" vertical-offset="1178" max-vertical-offset="5083">
-                  <caret line="110" column="19" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="1178" max-vertical-offset="5083">
+                  <caret line="101" column="14" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -251,10 +248,10 @@
         <option value="$PROJECT_DIR$/public/app/blog/blogController.js" />
         <option value="$PROJECT_DIR$/views/partials/managePortfolio.jade" />
         <option value="$PROJECT_DIR$/views/index.jade" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/public/app/app.js" />
         <option value="$PROJECT_DIR$/views/partials/addPortfolio.jade" />
         <option value="$PROJECT_DIR$/views/partials/portfolio.jade" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -560,7 +557,11 @@
       <created>1399490039868</created>
       <updated>1399490039868</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Portfolio 1.0  finished">
+      <created>1399494938532</created>
+      <updated>1399494938532</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -630,7 +631,8 @@
     <MESSAGE value="add modals to the showcase in portfolio." />
     <MESSAGE value="fixed blog and portfolio adding blank images when saved." />
     <MESSAGE value="portfolio showcase shows projects now." />
-    <option name="LAST_COMMIT_MESSAGE" value="portfolio showcase shows projects now." />
+    <MESSAGE value="Portfolio 1.0  finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Portfolio 1.0  finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -957,14 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.36" vertical-offset="650" max-vertical-offset="8160">
-          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1870">
@@ -992,14 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6308113" vertical-offset="1178" max-vertical-offset="5083">
-          <caret line="110" column="19" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/addPortfolio.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
@@ -1008,10 +994,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1178" max-vertical-offset="5083">
+          <caret line="101" column="14" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/portfolio.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51175916" vertical-offset="374" max-vertical-offset="4726">
-          <caret line="54" column="78" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.5277516" vertical-offset="527" max-vertical-offset="4726">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39754486" vertical-offset="1755" max-vertical-offset="8177">
+          <caret line="128" column="20" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
           <folding />
         </state>
       </provider>
