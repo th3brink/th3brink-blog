@@ -67,11 +67,13 @@ var app = angular.module('th3brink', requires)
     .controller('PortfolioCtrl', function ($scope, $rootScope, $modal, $kinvey, User) {
         $rootScope.navLocation = 'portfolio';
         $scope.portfolios = [];
+        $scope.portfoliosLoaded = false;
 
         var onLoad = function () {
             var promise = $kinvey.DataStore.find('Portfolio');
             promise.then(function(portfolios){
                 $scope.portfolios = portfolios;
+                $scope.portfoliosLoaded = true;
             });
 
         };
@@ -105,6 +107,8 @@ var app = angular.module('th3brink', requires)
             pics: [],
             tags: [],
             username: '',
+            link: '',
+            orderBy: 0,
             dateTime: new Date()
         };
 

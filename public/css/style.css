@@ -62,10 +62,20 @@ body {
     width: 200px;
 }
 
+.showcase-item img {
+    border: 2px solid #3c3c3c;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.showcase-item:hover img {
+    opacity: 0.7;
+}
+
 .showcase-item img,
 .showcase-item a {
     width: 100% !important;
-    /*height: inherit;*/
+    cursor: pointer !important;
 }
 
 .showcase-font {
@@ -73,7 +83,8 @@ body {
     text-decoration : none !important;
     background-color: #3c3c3c;
     padding: 0 2px;
-    border-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
     color: #439cf1;
     text-align: center;
     /*width: 90%;*/
@@ -249,7 +260,7 @@ a {
     /*border-color: #aaa #ccc #ddd #bbb;*/
     /*border-style: solid;*/
     /*border-width: 1px;*/
-    opacity: 0.7;
+    /*opacity: 0.7;*/
     color: inherit;
     /*padding: 2px;*/
     vertical-align: top;

@@ -35,11 +35,13 @@ div
       p {{portfolios[0].overview}}
     script(type="text/ng-template", id="myModalContent.html")
       div.modal-header
-        h3.modal-title {{portfolio.title}}
+        h3.modal-title
+          span(ng-hide="portfolio.link") {{portfolio.title}}
+          a(ng-show="portfolio.link", href="{{portfolio.link}}", target="_blank") {{portfolio.title}}
 
       div.modal-body
         p {{portfolio.overview}}
-        carousel(ng-show="portfolio.pics.length > 0", interval="7000")
+        carousel(ng-show="portfolio.pics.length > 0", interval="5000")
           slide(ng-repeat="slide in portfolio.pics", active="slide.active")
             img(ng-src="{{slide._downloadURL}}", style="margin:auto;", alt="portfolio pic", width="100%")
 
@@ -47,9 +49,10 @@ div
         button.btn btn-primary(ng-click="ok()") OK
         button.btn.btn-warning(ng-click="cancel()") Cancel
 
-
-    ul.hoverbox
-      li.showcase-item(ng-repeat="portfolio in portfolios")
+    div(ng-hide="portfoliosLoaded")
+      include /partials/includes/loadWell
+    ul.hoverbox(ng-show="portfoliosLoaded")
+      li.showcase-item(ng-repeat="portfolio in portfolios | orderBy: 'orderBy'")
         a(ng-click="open(portfolio)")
           img.smallItem(ng-src="{{portfolio.pics[0]._downloadURL}}")
           p.showcase-font {{portfolio.title}}
