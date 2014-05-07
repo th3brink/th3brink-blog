@@ -103,7 +103,7 @@ body {
 }
 
 .navbar-brand {
-  max-width: 200px;
+  max-width: 300px !important;
   color: #FFB700 !important;
 }
 

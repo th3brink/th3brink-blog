@@ -16,14 +16,14 @@ html(ng-app="th3brink", lang="en")
 
   body(ng-controller="MainCtrl")
     div.container(ng-controller="LoginCtrl")
-      div.navbar.navbar-inverse.navbar-fixed-top
+      div.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
         div.container
           button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-responsive-collapse")
             span.icon-bar
             span.icon-bar
             span.icon-bar
 
-        a.navbar-brand= logo
+        a.navbar-brand James Brinkerhoff | th3brink
         div.nav-collapse.collapse.navbar-responsive-collapse
           ul.nav.navbar-nav
             li(ng-class="{true:'active', false: ''}[navLocation == 'blog']")
@@ -61,7 +61,7 @@ html(ng-app="th3brink", lang="en")
 
       include /partials/includes/login
 
-      div(ng-view="")
+      div(ng-view)
 
     //script(src="js/jquery-2.0.3.min.js")
     script(src="js/jquery-2.0.3.js")
