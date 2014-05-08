@@ -118,8 +118,11 @@ body {
     padding: 10px;
 }
 
-#contactInfo {
-
+#contactInfo a {
+    color: white !important;
+}
+#contactInfo span {
+    color: #439cf1 !important;
 }
 
 .contact-highlight {
