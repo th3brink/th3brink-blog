@@ -1,4 +1,4 @@
-
+/*Some of this CSS is from past LoL projects*/
 body {
     width: 960px;
     margin-left: auto;
@@ -17,13 +17,12 @@ body {
 }
 
 #main {
-    /*height: 500px;*/
     background-color: #5E6165;
     margin: 10px;
     box-shadow: inset 0 0 3px 2px black;
 }
-/*#a9a9a9*/
-.footer{
+
+.footer {
     height: 50px;
     background-color: #484A4C;
     border-bottom-left-radius: 10px;
@@ -31,9 +30,9 @@ body {
     padding: 3px;
     color: #f5f5f5;
     box-shadow: 0 -3px 2px 0 #3e3e3e;
-    /*display: inline;*/
     position: relative;
 }
+
 #footerBar {
     /*position: relative;*/
 }
@@ -43,7 +42,6 @@ body {
     left: 25px;
 }
 
-
 .portfolio-content {
     background-color: #f5f5f5;
     margin: 20px;
@@ -51,7 +49,6 @@ body {
     border-radius: 5px;
     display: inline-block;
     color: #1F2D42;
-    /*float: left;*/
     box-shadow: 0 0 2px 3px black;
     padding-left: 10px;
     padding-right: 10px;
@@ -80,35 +77,29 @@ body {
 
 .showcase-font {
     font-style: normal;
-    text-decoration : none !important;
+    text-decoration: none !important;
     background-color: #3c3c3c;
     padding: 0 2px;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
     color: #439cf1;
     text-align: center;
-    /*width: 90%;*/
 }
 
 .divider {
-    /*background-color: #617AA1;*/
     background: #236ca3 url(../img/1-1-135-2-617AA1-1-423D3D-DDEE1E-DDEE1E-DDEE1E-DDEE1E-706969-78D316-78D316-78D316-78D316-yes-yes-yes-yes-yes-.png);
-    /*../imgs/repeatBackground2.png);*/
     margin: 10px;
     width: 98%;
     border-radius: 5px;
     display: inline-block;
     color: #f5f5f5;
     text-align: center;
-    /*float: left;*/
     box-shadow: 0 0 2px 3px black;
-    /*height: 70px;*/
 }
 
 .content h3 {
     text-align: center;
 }
-
 
 #skills {
 
@@ -121,6 +112,7 @@ body {
 #contactInfo a {
     color: white !important;
 }
+
 #contactInfo span {
     color: #439cf1 !important;
 }
@@ -136,9 +128,7 @@ body {
     margin-right: 2px;
 }
 
-
 .highlight-hover:hover {
-    /*border: white;*/
     background-color: #009900;
 }
 
@@ -172,11 +162,10 @@ body {
 .sidebarItem {
     position: fixed;
     right: 1px;
-    float:right;
+    float: right;
 }
+
 #linkedIn {
-    /*position: absolute;*/
-    /*right: 25px;*/
     top: 80px;
 }
 
@@ -216,8 +205,8 @@ body {
     margin-right: 2px;
     border: 1px solid black
 
-    /*padding: 5px;*/
 }
+
 #mainNav a:hover {
     cursor: pointer;
     opacity: 0.5;
@@ -227,30 +216,24 @@ body {
     background-color: #C22026;
 }
 
-/* =Hoverbox Code
-----------------------------------------------------------------------*/
-
-.hoverbox
-{
+.hoverbox {
     cursor: default;
     list-style: none;
 }
+
 a {
     cursor: pointer;
 }
 
-.hoverbox a
-{
+.hoverbox a {
     cursor: default;
 }
 
-.hoverbox a .preview
-{
+.hoverbox a .preview {
     display: none;
 }
 
-.hoverbox a:hover .preview
-{
+.hoverbox a:hover .preview {
     display: block;
     position: absolute;
     top: -33px;
@@ -258,26 +241,14 @@ a {
     z-index: 1;
 }
 
-.hoverbox img
-{
-    /*background: #fff;*/
-    /*border-color: #aaa #ccc #ddd #bbb;*/
-    /*border-style: solid;*/
-    /*border-width: 1px;*/
-    /*opacity: 0.7;*/
+.hoverbox img {
     color: inherit;
-    /*padding: 2px;*/
     vertical-align: top;
     width: 150px;
     height: inherit;
 }
 
-.hoverbox li
-{
-    /*background: #eee;*/
-    /*border-color: #ddd #bbb #aaa #ccc;*/
-    /*border-style: solid;*/
-    /*border-width: 1px;*/
+.hoverbox li {
     color: inherit;
     display: inline;
     float: left;
@@ -286,8 +257,7 @@ a {
     position: relative;
 }
 
-.hoverbox .preview
-{
+.hoverbox .preview {
     /*border-color: #000;*/
     /*width: 400px;*/
     width: 600px;
@@ -299,7 +269,7 @@ a {
     border-style: solid;
 }
 
-.smallItem{
+.smallItem {
     border-width: 1;
     border-color: #f5f5f5;
     border-style: solid;
@@ -322,6 +292,7 @@ a {
 .pointer {
     cursor: pointer;
 }
+
 .cancel-pointer {
     cursor: default;
 }
@@ -394,7 +365,6 @@ a {
 
 }
 
-
 .inner-bar {
     height: 100%;
     margin-top: 25px;
@@ -402,10 +372,6 @@ a {
     margin-right: 0 !important;
     overflow-y: scroll;
     overflow-x: hidden;
-    /*-webkit-transition: all 1s ease-in-out;*/
-    /*-moz-transition: all 1s ease-in-out;*/
-    /*-o-transition: all 1s ease-in-out;*/
-    /*transition: all 1s ease-in-out;*/
 
 }
 
@@ -475,4 +441,6 @@ a {
     min-width: 10%;
 }
 
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}

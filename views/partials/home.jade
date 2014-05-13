@@ -50,8 +50,6 @@ div
       div.row
         h2
           span Tags
-          //i.glyphicon.glyphicon-tags
-
 
         div(ng-repeat="tag in tags", style="margin: 2px; width: 90%;")
           a.label.label-info(ng-class="{true:'selected-tag', false:''}[tagSelected(tag.name)]",

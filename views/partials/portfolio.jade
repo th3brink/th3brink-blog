@@ -1,5 +1,4 @@
 
-
 div
   header.header
     h1#title James Brinkerhoff's Portfolio
@@ -26,13 +25,7 @@ div
       a(href='/') Blog
     #showcase.divider
       h3 Showcase
-        //span.glyphicon.glyphicon-chevron-left.pointer.pull-left
-        //span.glyphicon.glyphicon-chevron-right.pointer.pull-right
-    //div.col-sm-6
-      img.img-rounded.img-responsive(ng-src="{{portfolios[0].pics[0]._downloadURL}}", style="margin:auto;", alt="post pic", width="100%")
-    //span.portfolio-content.col-sm-4
-      h4 {{portfolios[0].title}}
-      p {{portfolios[0].overview}}
+
     script(type="text/ng-template", id="myModalContent.html")
       div.modal-header
         h3.modal-title
@@ -56,7 +49,6 @@ div
         a(ng-click="open(portfolio)")
           img.smallItem(ng-src="{{portfolio.pics[0]._downloadURL}}")
           p.showcase-font {{portfolio.title}}
-
 
     #projectsTitle.divider
       h3 Projects

@@ -2,6 +2,14 @@
  * Created by james on 4/22/2014.
  */
 
+
+var requires = [
+
+];
+
+var user = angular.module('th3User', requires);
+
+// This will enable offline and online modes
 var watchConnectivity = function () {
 //    return function () {
 //        $(window).on({
@@ -13,8 +21,8 @@ var watchConnectivity = function () {
 };
 
 
-app.factory('User', function ($kinvey, $location) {
-    var self =  {
+user.factory('User', function ($kinvey, $location) {
+    var self = {
         user: {
 
         },
@@ -23,7 +31,7 @@ app.factory('User', function ($kinvey, $location) {
     };
     var observers = [];
 
-    function setUser (user) {
+    function setUser(user) {
         self.user = user;
         self.notifyObservers();
         self.loaded = true;
@@ -47,7 +55,7 @@ app.factory('User', function ($kinvey, $location) {
 
     self.loginCachedUser = function (user) {
         setUser(user);
-        console.log('Logging in cached user: '+user.username);
+        console.log('Logging in cached user: ' + user.username);
 
     };
 
@@ -55,7 +63,7 @@ app.factory('User', function ($kinvey, $location) {
         if (!newUser) return;
         console.log('Creating new user...');
         var user = $kinvey.getActiveUser();
-        if(null !== user) {
+        if (null !== user) {
             var logoutPromise = $kinvey.User.logout({force: true});
             logoutPromise.then(function () {
                 self.user = {};
@@ -66,7 +74,7 @@ app.factory('User', function ($kinvey, $location) {
                     email: newUser.email,
                     type: 'user'
                 });
-                console.log('User: '+newUser.username+'  Created!');
+                console.log('User: ' + newUser.username + '  Created!');
                 promise.then(setUser, function (err) {
                     alert('Create Error: ' + err.description);
                     self.loginAnonymous();
@@ -90,21 +98,21 @@ app.factory('User', function ($kinvey, $location) {
     self.login = function (userLogin) {
 
         var user = $kinvey.getActiveUser();
-        if(null !== user) {
+        if (null !== user) {
             var logoutPromise = $kinvey.User.logout({force: true});
 
             logoutPromise.then(function () {
                 self.user = {};
                 var promise = $kinvey.User.login(userLogin.username, userLogin.password);
                 promise.then(setUser, function (err) {
-                    alert('Login Error: '+err.description);
+                    alert('Login Error: ' + err.description);
                     self.loginAnonymous();
                 });
             })
         } else {
             var promise = $kinvey.User.login(userLogin.username, userLogin.password);
             promise.then(setUser, function (err) {
-                alert('Login Error: '+err.description);
+                alert('Login Error: ' + err.description);
             });
         }
 
@@ -112,7 +120,7 @@ app.factory('User', function ($kinvey, $location) {
     };
     self.logout = function () {
         var user = $kinvey.getActiveUser();
-        if(null !== user) {
+        if (null !== user) {
             var promise = $kinvey.User.logout({force: true});
 
             promise.then(function () {
@@ -137,18 +145,17 @@ app.factory('User', function ($kinvey, $location) {
 });
 
 
-app.run(function ($kinvey, User, $location) {
-        finishedIniting = $kinvey.init({
-            appKey: 'kid_eVISsVhFfM',
-            appSecret: 'e90f003a9a1d499a9895b5e0ffd9dec8',
-            sync: { enable: true }
-        });
+user.run(function ($kinvey, User, $location) {
+    finishedIniting = $kinvey.init({
+        appKey: 'kid_eVISsVhFfM',
+        appSecret: 'e90f003a9a1d499a9895b5e0ffd9dec8',
+        sync: { enable: true }
+    });
 
     finishedIniting.then(function () {
         var promise = $kinvey.User.me();
         promise.then(function (user) {
             User.loginCachedUser(user);
-//            $location.path('/user');
 
         }, function () {
             User.loginAnonymous();
@@ -160,7 +167,7 @@ app.run(function ($kinvey, User, $location) {
 });
 
 
-app.controller('LoginCtrl', function ($scope, User, $rootScope) {
+user.controller('LoginCtrl', function ($scope, User, $rootScope) {
     $scope.loginBox = false;
     $scope.passwordCheck = '';
     $scope.userLogin = {
@@ -168,6 +175,9 @@ app.controller('LoginCtrl', function ($scope, User, $rootScope) {
         password: '',
         email: ''
     };
+    $scope.login = User.login;
+    $scope.logout = User.logout;
+
 
     $scope.closeLogin = function () {
         $scope.loginBox = false;
@@ -186,19 +196,16 @@ app.controller('LoginCtrl', function ($scope, User, $rootScope) {
             alert('Password needs to be 8 characters or longer');
         } else if (!loginCred.username || loginCred.username.length < 2) {
             alert('Proper Username needs to be entered')
-        }  else if (!loginCred.email || loginCred.email.length < 2) {
+        } else if (!loginCred.email || loginCred.email.length < 2) {
             alert('Proper Email needs to be entered')
         } else {
             User.create(loginCred);
         }
 
     };
-    $scope.login = User.login;
-    $scope.logout = User.logout;
 
     User.addObserver(function (user) {
         $scope.closeLogin();
-//        console.log(user);
         $rootScope.user = user;
     })
 

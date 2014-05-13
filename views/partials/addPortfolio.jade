@@ -3,15 +3,16 @@ div.well
     label Name of company and/or product
     input(type="text", ng-model="portfolio.title", style="width: 90%; margin-left: 10px")
     br
+
     label Project Overview
     br
     textarea.add-blog-textarea(ng-model="portfolio.overview")
 
     label Preview
     br
-    //btf-markdown.blog-display-preview(ng-show="post.body", style="display: inline-block", ng-model="post.body")
     p.blog-display-preview(ng-show="portfolio.overview", style="display: inline-block") {{portfolio.overview}}
     br
+
     label Tags
     br
     div
@@ -24,7 +25,7 @@ div.well
       a.btn.btn-small.btn-primary(ng-click="addNewTag(tag)") add tag
       span &nbsp; | existing tags
       select(ng-model="selectedTag", ng-change="addTag(selectedTag)", ng-options="tag.name for tag in tags track by tag.name")
-        //option(ng-repeat="tag in tags", ng-click="addTag(tag)") {{tag.name}}
+
     br
     div
       label added tags &nbsp;
@@ -47,6 +48,7 @@ div.well
     input.btn.btn-primary.pull-right(type="submit", value="Save")
     input#postPics(type="file", multiple)
     br
+
     div(ng-show="portfolio.pics", ng-repeat="pic in portfolio.pics")
       img.limit-image-size(ng-src="{{pic._downloadURL}}")
       i.glyphicon.glyphicon-remove.btn-close(ng-click="removeImage($index)")

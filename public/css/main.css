@@ -1,4 +1,4 @@
-
+/*CSS from past LoL projects*/
 body {
   padding-top: 70px;
   background:
@@ -13,98 +13,100 @@ body {
 }
 
 .navbar {
-  background-color: #236ca3;
-  /*background-color: #0772A1;*/
+    background-color: #236ca3;
 }
 
 .navbar a {
-  color: #449d44;
+    color: #449d44;
 }
 
 .icon-buffer-left {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .login {
-  position: fixed;
-  top:55px;
-  right: 5px;
-  background-color: gray;
-  width: 250px;
-  padding: 10px;
-  z-index: 1000;
+    position: fixed;
+    top: 55px;
+    right: 5px;
+    background-color: gray;
+    width: 250px;
+    padding: 10px;
+    z-index: 1000;
 }
 
 .login-fields input {
-  width: 99%;
-  border-radius: 2px;
-  border: none;
-  padding: 5px;
-  margin-bottom: 5px;
-  outline-color: #236ca3
+    width: 99%;
+    border-radius: 2px;
+    border: none;
+    padding: 5px;
+    margin-bottom: 5px;
+    outline-color: #236ca3
 }
 
 .outer-center {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
+
 .inner-center {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .outer-perfect-center {
-  display: table;
-  position: fixed;
-  height: 100%;
-  width: 100%;
+    display: table;
+    position: fixed;
+    height: 100%;
+    width: 100%;
 }
 
 .inner-perfect-center {
-  display: table-cell;
-  vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .buffer-right {
-  margin-right: 5px;
+    margin-right: 5px;
 }
+
 .buffer-left {
-  margin-right: 5px;
+    margin-right: 5px;
 }
+
 .buffer {
-  margin: 0 5px;
+    margin: 0 5px;
 }
+
 .spinner {
-  margin: 0 5px;
+    margin: 0 5px;
 }
 
 /*blog*/
-.blog
-{
-  padding-top: 30px;
+.blog {
+    padding-top: 30px;
 }
-.blog-post p.cat-blog
-{
-  margin-top: 0;
+
+.blog-post p.cat-blog {
+    margin-top: 0;
 }
-.date-blog
-{
-  font-size: 300%;
-  font-weight: 600;
+
+.date-blog {
+    font-size: 300%;
+    font-weight: 600;
 }
-.meta-blog
-{
-  border-bottom: 1px solid #dedede;
-  border-top: 1px solid #dedede;
-  display: inline-block;
-  margin: 3px 0;
-  padding: 3px 0;
-  width: 100%;
+
+.meta-blog {
+    border-bottom: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+    display: inline-block;
+    margin: 3px 0;
+    padding: 3px 0;
+    width: 100%;
 }
 
 .navbar-brand {
-  max-width: 300px !important;
-  color: #FFB700 !important;
+    max-width: 300px !important;
+    color: #FFB700 !important;
 }
 
 .btn-close:hover {

@@ -13,6 +13,3 @@ exports.partial = function (req, res) {
   res.render('partials/' + req.params['partial'], title);
 };
 
-//exports.risk = function(req, res){
-//    res.sendfile(__dirname + "../views/index.html");
-//};

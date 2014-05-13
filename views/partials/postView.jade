@@ -61,9 +61,6 @@ div.col-12.well(ng-show="selectedPost.body")
     hr(ng-show="selectedPost.comments.length > 0 && showComments")
 
     div(ng-show="selectedPost.comments.length > 0 && showComments")
-      //h3 Comments({{selectedPost.comments.length}})
-        a.btn.btn-info.offset7(style="font-size: 12px; margin-right:10px; font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;", ng-click="showAddComment = true") Add Comment
-        a.btn.normal-font(ng-click="showComments = false") hide
       div(ng-repeat="comment in selectedPost.comments")
         div.comment-content(style="padding: 5px;")
           div

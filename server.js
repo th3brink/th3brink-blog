@@ -5,10 +5,10 @@
 
 var express = require('express')
   , routes = require('./routes/routes')
-  , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
 
+//create express app
 var app = express();
 
 app.locals.basedir = __dirname+'/views';
@@ -31,6 +31,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+//routes
 app.get('/', routes.index);
 app.get('/addPost', routes.index);
 app.get('/addPortfolio', routes.index);
@@ -45,26 +46,6 @@ app.get('/partials/:partial', routes.partial);
 app.get('/post/:id', routes.index);
 app.get('/editPost/:id', routes.index);
 app.get('/editPortfolio/:id', routes.index);
-//
-//
-//// Routes
-//app.get('/', routes.index);
-//app.get('/partial/:name', routes.partial);
-//
-//// JSON API
-////app.get('/api/name', api.name);
-//
-//// redirect all others to the index (HTML5 history)
-
-//app.use(app.router);
-//app.use(function(req, res) {
-//    Use res.sendfile, as it streams instead of reading the file into memory.
-//    res.sendfile(__dirname + '/views/index.jade');
-//});
-
-//app.get('/users', user.list);
-//app.get('/*', routes.index);
-//app.all('*', routes.notFound);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

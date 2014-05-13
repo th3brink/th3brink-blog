@@ -1,26 +1,37 @@
+var requires = [
+];
 
-var cleanupAngularObject = function(value) {
-    if (value instanceof Array) {
-        for (var i = 0; i < value.length; i++) {
-            cleanupAngularObject(value[i]);
-        }
-    }
-    else if (value instanceof Object) {
-        for (property in value) {
-            if (/^\$+/.test(property)) {
-                delete value[property];
-            }
-            else {
-                cleanupAngularObject(value[property]);
-            }
-        }
-    }
-};
+var blog = angular.module('th3Blog', requires);
+
+blog.config(function ($routeProvider) {
+
+    $routeProvider
+
+        .when('/addPost', {
+            controller: 'AddPostCtrl',
+            templateUrl: '/partials/addPost'
+
+        }).when('/editPost/:post', {
+            controller: 'EditPostCtrl',
+            templateUrl: '/partials/addPost'
+
+        }).when('/post/:post', {
+            controller: 'PostCtrl',
+            templateUrl: '/partials/postView'
+
+        }).when('/managePosts', {
+            controller: 'ManageCtrl',
+            templateUrl: '/partials/managePosts'
+
+        });
+});
+
+
 
 /*
  * ADD POST CTRL
  * */
-app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, User) {
+blog.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, User, Tools) {
     $rootScope.navLocation = 'blog';
     $scope.tags = [];
     $scope.post = {
@@ -68,14 +79,14 @@ app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, 
         $scope.post.tags.splice(index, 1);
     };
 
-    function saveImage (pics, index, post, cb) {
+    function saveImage(pics, index, post, cb) {
         var fileUploadedPromise = $kinvey.File.upload(pics[index]);
         fileUploadedPromise.then(function (res) {
             post.pics.push({
                 _type: 'KinveyFile',
                 _id: res._id
             });
-            if (pics.length > index+1) saveImage(pics, index+1, post, cb);
+            if (pics.length > index + 1) saveImage(pics, index + 1, post, cb);
             else cb();
         });
     }
@@ -87,9 +98,9 @@ app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, 
         if (changePath === undefined) changePath = true;
 
         var pics = document.getElementById('postPics').files;
-        cleanupAngularObject(post);
+        Tools.cleanupAngularObject(post);
 
-        function save () {
+        function save() {
             post.username = $rootScope.user.username;
             post.datetime = new Date();
             post.comments = [];
@@ -97,11 +108,12 @@ app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, 
             post.groups = [];
             var postSavedPromise = $kinvey.DataStore.save('Blogs', post);
 
-            postSavedPromise.then(function (){
+            postSavedPromise.then(function () {
                 if (changePath) $location.path('/');
             });
 
         }
+
         if (pics.length > 0) {
             saveImage(pics, 0, post, function () {
                 save();
@@ -117,7 +129,7 @@ app.controller('AddPostCtrl', function ($scope, $rootScope, $kinvey, $location, 
 /*
  * EDIT POST CTRL
  * */
-app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location, $routeParams, User) {
+blog.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location, $routeParams, User, Tools) {
     $rootScope.navLocation = 'blog';
     $scope.tags = [];
     $scope.post = {
@@ -136,7 +148,7 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
 
     var loadPost = function () {
         var blog = $kinvey.DataStore.get('Blogs', $routeParams.post);
-        blog.then(function(post){
+        blog.then(function (post) {
             if (post.username !== $rootScope.user.username) {
                 $location.path('/');
             }
@@ -174,14 +186,14 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
         $scope.post.tags.splice(index, 1);
     };
 
-    function saveImage (pics, index, post, cb) {
+    function saveImage(pics, index, post, cb) {
         var fileUploadedPromise = $kinvey.File.upload(pics[index]);
         fileUploadedPromise.then(function (res) {
             post.pics.push({
                 _type: 'KinveyFile',
                 _id: res._id
             });
-            if (pics.length > index+1) saveImage(pics, index+1, post, cb);
+            if (pics.length > index + 1) saveImage(pics, index + 1, post, cb);
             else cb();
         });
     }
@@ -199,17 +211,18 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
             $location.path('/');
         }
         var pics = document.getElementById('postPics').files;
-        cleanupAngularObject(post);
+        Tools.cleanupAngularObject(post);
 
-        function save () {
+        function save() {
             if (!post.datetime) post.datetime = new Date();
             var postSavedPromise = $kinvey.DataStore.save('Blogs', post);
 
-            postSavedPromise.then(function (){
+            postSavedPromise.then(function () {
                 if (changePath) $location.path('/');
             });
 
         }
+
         if (pics.length > 0) {
             saveImage(pics, 0, post, function () {
                 save();
@@ -226,7 +239,7 @@ app.controller('EditPostCtrl', function ($scope, $rootScope, $kinvey, $location,
 /*
  * BLOG POST CTRL
  * */
-app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $location) {
+blog.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $location) {
     $rootScope.navLocation = 'blog';
     $scope.showSideBar = false;
     $scope.search = {
@@ -266,23 +279,23 @@ app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $locatio
 
     var loadBlogs = function () {
         var BlogsP = $kinvey.DataStore.find('Blogs');
-        BlogsP.then(function(posts){
+        BlogsP.then(function (posts) {
             $scope.posts = posts;
 //            console.log(posts)
         });
 
         var TagsP = $kinvey.DataStore.find('Tags');
-        TagsP.then(function(tags){
+        TagsP.then(function (tags) {
             $scope.tags = tags;
         });
 
         var GroupsP = $kinvey.DataStore.find('Labels');
-        GroupsP.then(function(groups){
+        GroupsP.then(function (groups) {
             $scope.groups = groups;
         });
 
         var LabelsP = $kinvey.DataStore.find('Labels');
-        LabelsP.then(function(labels){
+        LabelsP.then(function (labels) {
             $scope.labels = labels;
         });
 
@@ -296,11 +309,10 @@ app.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $locatio
 });
 
 
-
 /*
  * POST CTRL
  * */
-app.controller('PostCtrl', function ($scope, $rootScope, $routeParams, $kinvey, User) {
+blog.controller('PostCtrl', function ($scope, $rootScope, $routeParams, $kinvey, User) {
     $rootScope.navLocation = 'blog';
     $scope.selectedPost = {
         body: '',
@@ -309,7 +321,7 @@ app.controller('PostCtrl', function ($scope, $rootScope, $routeParams, $kinvey, 
 
     var loadPost = function () {
         var blog = $kinvey.DataStore.get('Blogs', $routeParams.post);
-        blog.then(function(posts){
+        blog.then(function (posts) {
             $scope.selectedPost = posts;
         });
 
@@ -332,11 +344,11 @@ app.controller('PostCtrl', function ($scope, $rootScope, $routeParams, $kinvey, 
         newComment.username = username;
         newComment.updated = new Date();
 
-        if(!$scope.selectedPost.comments) $scope.selectedPost.comments = [];
+        if (!$scope.selectedPost.comments) $scope.selectedPost.comments = [];
         $scope.selectedPost.comments.push(newComment);
 
         var saved = $kinvey.DataStore.save('Blogs', $scope.selectedPost);
-        saved.then(function(posts){
+        saved.then(function (posts) {
             $scope.selectedPost = posts;
             $scope.showAddComment = false;
         }, function (err) {
@@ -348,7 +360,7 @@ app.controller('PostCtrl', function ($scope, $rootScope, $routeParams, $kinvey, 
         $scope.selectedPost.comments.splice(index, 1);
 
         var saved = $kinvey.DataStore.save('Blogs', $scope.selectedPost);
-        saved.then(function(posts){
+        saved.then(function (posts) {
             $scope.selectedPost = posts;
         }, function (err) {
             alert(err.msg);
@@ -359,7 +371,7 @@ app.controller('PostCtrl', function ($scope, $rootScope, $routeParams, $kinvey, 
 /*
  * MANAGE POST CTRL
  * */
-app.controller('ManageCtrl', function ($scope, $rootScope, $kinvey, User, $location) {
+blog.controller('ManageCtrl', function ($scope, $rootScope, $kinvey, User, $location) {
     $rootScope.navLocation = 'blog';
 
     $scope.posts = [];
@@ -370,7 +382,7 @@ app.controller('ManageCtrl', function ($scope, $rootScope, $kinvey, User, $locat
 
     var loadBlogs = function () {
         var BlogsP = $kinvey.DataStore.find('Blogs');
-        BlogsP.then(function(posts){
+        BlogsP.then(function (posts) {
             $scope.posts = posts;
         });
 
@@ -389,7 +401,7 @@ app.controller('ManageCtrl', function ($scope, $rootScope, $kinvey, User, $locat
     };
 
     $scope.editPost = function (id) {
-        $location.path('/editPost/'+id);
+        $location.path('/editPost/' + id);
     };
 
 });

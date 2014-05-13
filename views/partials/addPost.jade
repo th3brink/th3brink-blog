@@ -3,15 +3,16 @@ div.well
     label Title
     input(type="text", ng-model="post.title", style="width: 90%; margin-left: 10px")
     br
+
     label Body
     br
     textarea.add-blog-textarea(ng-model="post.body")
-    //textarea#epiceditor(ng-model="post.body", ui-epic-editor, style="width: 90%; margin-left: 5px; height: 300px")
 
     label Preview
     br
     btf-markdown.blog-display-preview(ng-show="post.body", style="display: inline-block", ng-model="post.body")
     br
+
     label Tags
     br
     div
@@ -24,7 +25,7 @@ div.well
       a.btn.btn-small.btn-primary(ng-click="addNewTag(tag)") add tag
       span &nbsp; | existing tags
       select(ng-model="selectedTag", ng-change="addTag(selectedTag)", ng-options="tag.name for tag in tags track by tag.name")
-        //option(ng-repeat="tag in tags", ng-click="addTag(tag)") {{tag.name}}
+
     br
     div
       label added tags &nbsp;
@@ -42,6 +43,7 @@ div.well
     a.btn.btn-success.pull-right(style="margin-right: 2px", ng-click="quickSave(post)") Save
     input#postPics(type="file", multiple)
     br
+
     div(ng-show="post.pics", ng-repeat="pic in post.pics")
       img.limit-image-size(ng-src="{{pic._downloadURL}}")
       i.glyphicon.glyphicon-remove.btn-close(ng-click="removeImage($index)")
