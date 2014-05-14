@@ -112,3 +112,25 @@ body {
 .btn-close:hover {
     color: #c90000
 }
+
+.blog-post {
+    font-size: 18px;
+    color: #3e3e3e;
+    background-color: #ebebeb;
+    /*background-color: rgba(191, 215, 249, 0.57);*/
+    padding: 10px;
+}
+
+
+.add-blog-textarea {
+    width: 100%;
+    height: 250px;
+    margin: 5px 0;
+}
+
+.blog-display-preview {
+    width: 100%;
+    margin: 5px 0;
+    padding: 5px;
+    background-color: rgba(191, 215, 249, 0.57);
+}

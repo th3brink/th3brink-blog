@@ -30,5 +30,6 @@ tools.factory('Tools', function ($kinvey, $location) {
                 }
             }
         }
-    }
+    };
+    return self;
 });
