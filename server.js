@@ -11,7 +11,7 @@ var express = require('express')
 //create express app
 var app = express();
 
-//app.locals.basedir = __dirname+'/views';
+app.locals.basedir = __dirname+'/views';
 
 // all environments
 app.set('port', process.env.PORT || 7000);
