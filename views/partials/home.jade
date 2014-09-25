@@ -3,7 +3,7 @@ div.row()
   div.row
     div.outer-center(ng-show="spinnerShowing")
       img.inner-center(src="img/blue-black-spinner.gif")
-    div.col-12.well(ng-repeat="post in posts | filter: search", style="margin-bottom: 10px")
+    div.col-12.well(ng-repeat="post in posts | filter: search | orderBy: sortByDate: true", style="margin-bottom: 10px")
       div.col-sm-12
         h4.pull-right {{post.datetime | date: 'mediumDate'}}
         a(href="post/{{post._id}}")

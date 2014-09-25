@@ -248,6 +248,10 @@ blog.controller('BlogCtrl', function ($scope, $rootScope, $kinvey, User, $locati
         live: true
     };
 
+    $scope.sortByDate = function (val) {
+        return new Date(val.datetime).getTime()
+    };
+
     $scope.addTagSearch = function (tagName, index) {
         var foundDup = false;
         for (var i in $scope.search.tags) {
